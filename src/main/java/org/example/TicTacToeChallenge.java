@@ -4,6 +4,7 @@ import  java.util.Scanner;
 
 // IN PORTUGUESE THIS GAME IS CALLED 'JOGO DA VELHA'
 public class TicTacToeChallenge {
+
     public static void main(String[] args) {
         Game ticTacToe = new Game();
         ticTacToe.play();
@@ -104,14 +105,16 @@ public class TicTacToeChallenge {
 
         private boolean isInvalidMovement(int line, int column) {
 
-            if (board[line][column] != '\0') {
-                System.out.println("Invalid movement, try again");
-                return false;
-            }
             if (line < 0 || line > 2 || column < 0 || column > 2) {
                 System.out.println("Invalid movement, try again");
                 return false;
             }
+
+            if (board[line][column] != '\0') {
+                System.out.println("Invalid movement, try again");
+                return false;
+            }
+
             return true;
         }
     }
